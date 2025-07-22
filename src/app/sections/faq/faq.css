@@ -1,0 +1,17 @@
+.faq-answer-content {
+  max-height: 0;
+  opacity: 0;
+  transition: grid-template-rows 0.5s ease-out;
+}
+
+/* When the answer is open, expand max-height and make it visible */
+/* CAMBIO AQUÍ: Ahora usa la clase 'is-open' */
+.faq-answer-content.is-open {
+  max-height: 500px; /* A value large enough to contain any answer content */
+  opacity: 1;
+}
+
+/* Optional: Remove bottom border for the last item */
+.last-item {
+  border-bottom: none !important;
+}

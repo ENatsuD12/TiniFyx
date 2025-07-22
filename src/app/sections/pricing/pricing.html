@@ -1,0 +1,84 @@
+<!-- pricing.component.html -->
+<section class="py-16 md:py-20 lg:py-24 bg-white font-montserrat">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Título Principal de la Sección -->
+    <h2 class="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 text-center mb-12 md:mb-16">
+      Elige tu Plan Ideal
+    </h2>
+
+    <!-- Contenedor de Planes (Grid) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
+      <!-- Tarjeta para el Plan Esencial (Destacado) -->
+      <div
+        class="bg-white rounded-xl p-8 lg:p-10 shadow-2xl border-4 border-blue-600 relative
+               transform hover:scale-105 transition-all duration-300 flex flex-col h-full"
+      >
+        <!-- Etiqueta de Destacado (opcional, si se desea un badge) -->
+        <!-- <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Más Popular</span> -->
+
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+          {{ plans[0].name }}
+        </h3>
+        <div class="text-center mb-6">
+          <p class="text-5xl md:text-6xl font-bold text-blue-600 leading-none">
+            {{ plans[0].price.split(' ')[0] }}
+          </p>
+          <span class="text-xl text-gray-600">{{ plans[0].price.split(' ')[1] }}</span>
+        </div>
+        <p class="text-base md:text-lg text-gray-600 mb-6 text-center flex-grow">
+          {{ plans[0].description }}
+        </p>
+
+        <ul class="mt-8 mb-8 space-y-3 text-left mx-auto md:mx-0 w-full">
+          <li *ngFor="let feature of plans[0].features" class="flex items-center">
+            <!-- Icono de Check (Heroicons) -->
+            <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" class="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700 font-medium">{{ feature }}</span>
+          </li>
+        </ul>
+
+        <a [routerLink]="plans[0].ctaLink"
+           class="mt-auto w-full py-3 px-6 rounded-lg bg-blue-600 text-white font-semibold shadow-md
+                  hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-center block">
+          {{ plans[0].ctaText }}
+        </a>
+      </div>
+
+      <!-- Tarjeta para el Plan Licencia Personalizada / Desarrollo -->
+      <div
+        class="bg-white rounded-xl p-8 lg:p-10 shadow-md relative
+               transform hover:scale-105 transition-all duration-300 flex flex-col h-full"
+      >
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+          {{ plans[1].name }}
+        </h3>
+        <div class="text-center mb-6">
+          <p class="text-3xl md:text-4xl font-bold text-gray-700 leading-none">
+            {{ plans[1].price }}
+          </p>
+        </div>
+        <p class="text-base md:text-lg text-gray-600 mb-6 text-center flex-grow">
+          {{ plans[1].description }}
+        </p>
+
+        <ul class="mt-8 mb-8 space-y-3 text-left mx-auto md:mx-0 w-full">
+          <li *ngFor="let feature of plans[1].features" class="flex items-center">
+            <!-- Icono de Check (Heroicons) -->
+            <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" class="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700 font-medium">{{ feature }}</span>
+          </li>
+        </ul>
+
+        <a [routerLink]="plans[1].ctaLink"
+           class="mt-auto w-full py-3 px-6 rounded-lg bg-transparent border-2 border-blue-600 text-blue-600 font-semibold
+                  hover:bg-blue-50 transition-all duration-300 text-center block">
+          {{ plans[1].ctaText }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

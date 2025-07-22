@@ -1,0 +1,35 @@
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Mueve el 50% del ancho total del contenedor duplicado */
+  }
+}
+
+/* Aplica la animación al contenedor de los logotipos */
+.logos-wrapper {
+  /* Velocidad por defecto para dispositivos pequeños (móvil) */
+  animation: scroll-logos 10s linear infinite; /* Más rápido en móvil */
+}
+
+/* Para pantallas medianas (md: 768px y superior) */
+@media (min-width: 768px) {
+  .logos-wrapper {
+    animation-duration: 10s; /* Velocidad intermedia */
+  }
+}
+
+/* Para pantallas grandes (lg: 1024px y superior) */
+@media (min-width: 1024px) {
+  .logos-wrapper {
+    animation-duration: 15s; /* Más lento en desktop */
+  }
+}
+
+/* Para pantallas extra-grandes (xl: 1280px y superior, opcional) */
+@media (min-width: 1280px) {
+  .logos-wrapper {
+    animation-duration: 20s; /* Aún más lento si lo deseas */
+  }
+}

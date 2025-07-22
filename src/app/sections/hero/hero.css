@@ -1,0 +1,19 @@
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+    color: inherit; /* Mantiene el color original */
+  }
+  50% {
+    transform: scale(1.05); /* Ligeramente más grande */
+    color: #4A90E2; /* Un azul de acento para el "click" */
+  }
+  100% {
+    transform: scale(1);
+    color: inherit; /* Vuelve al color original */
+  }
+}
+
+/* Aplica la animación a la clase 'hero-click-animation' */
+.hero-click-animation {
+  animation: clickEffect 1s ease-out 0.5s infinite; /* 0.8s duración, 0.5s de retraso */
+}
